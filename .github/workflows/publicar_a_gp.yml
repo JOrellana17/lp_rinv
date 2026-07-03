@@ -1,0 +1,42 @@
+name: VITE MPA publicar a github pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+env:
+    DEPLOY_BASE_URL: ${{ vars.DEPLOY_BASE_URL }}
+concurrency:
+    group: "pages"
+
+jobs:
+    build:
+        environment:
+            name: github-pages
+            url: ${{ steps.github-pages.outputs.page_url }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: clonar el repositorio
+              uses: actions/checkout@v4
+            - name: instalar Nodejs
+              uses: actions/setup-node@v6
+              with:
+                node-version: 24
+            - name: instalar dependencias
+              run: npm install
+            - name: compilar el proyecto
+              run: npm run build
+            - name: configurar github pages
+              uses: actions/configure-pages@v5
+            - name: subir compilados (dist) a github pages
+              uses: actions/upload-pages-artifact@v4
+              with:
+                path: './dist'
+            - name: publicar a github pages
+              id: github-pages
+              uses: actions/deploy-pages@v4

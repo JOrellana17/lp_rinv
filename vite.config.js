@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import path, { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import * as glob from "glob";
 
 import HtmlCssPurgePlugin from 'vite-plugin-purgecss';
@@ -7,6 +8,7 @@ import HandlebarPlugin from 'vite-plugin-handlebars';
 
 import getPageContext from './src/data/index';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function obtenerHtmlFiles() {
     return Object.fromEntries(
@@ -36,8 +38,9 @@ function obtenerHtmlFiles() {
 export default defineConfig(
     {
         appType: 'mpa',
+        base: process.env.DEPLOY_BASE_URL ?? "/",
         build: {
-            rolldownOptions: {
+            rollupOptions: {
                 input: obtenerHtmlFiles()
             }
         },
