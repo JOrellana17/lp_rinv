@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/less/style.less" />
+    <title>Tabla de Deportes</title>
+  </head>
+  <body>
+    {{>header}}
+    <main>
+      <section class="grid">
+          <div class="row">
+            <div class="col-12">
+                <h2>Proyecto de Tabla con Parcial HBS</h2>
+                <p>La siguiente vista muestra el objeto JSON de variables, el parcial HBS y la tabla generada con esos datos.</p>
+            </div>
+          </div>
+      </section>
+
+      <section class="grid">
+        <div class="row gap-2">
+          <div class="col-12 col-lg-6">
+            <h3>Variables JSON</h3>
+            <pre class="code-preview">{{deportes_json_preview}}</pre>
+          </div>
+          <div class="col-12 col-lg-6">
+            <h3>Parcial HBS</h3>
+            <pre class="code-preview">{{tabla_parcial_preview}}</pre>
+          </div>
+        </div>
+      </section>
+
+      {{>tabla_deportes deportes=deportes}}
+    </main>
+    <footer>
+       <section>
+        &copy; Todos los derechos Reservados 2026 ICC UNICAH
+       </section>
+    </footer>
+  </body>
+</html>

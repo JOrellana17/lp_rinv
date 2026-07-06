@@ -30,7 +30,8 @@ function obtenerHtmlFiles() {
     /*
         {
             "index": "~/....../index.html",
-            "productos": "~/......../productos.html",
+            "productos": "~/....../productos.html",
+            "deportes": "~/......../deportes.html",
         }
     */
 }
