@@ -1,27 +1,29 @@
 <section class="grid">
   <div class="row">
     <div class="col-12">
-      <h2>Tabla de Deportes</h2>
-      <table class="table deportes-table">
-        <thead>
-          <tr>
-            <th>Deporte</th>
-            <th>Descripción</th>
-            <th>¿Qué se requiere?</th>
-            <th>Ranking</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each deportes}}
-          <tr>
-            <td>{{deporte}}</td>
-            <td>{{descripcion}}</td>
-            <td>{{requerido}}</td>
-            <td><span class="ranking-badge ranking-{{ranking}}">{{ranking}}</span></td>
-          </tr>
-          {{/each}}
-        </tbody>
-      </table>
+      <div class="deportes-table-panel">
+        <h2 class="deportes-title">Tabla de<br />Deportes</h2>
+        <table class="table deportes-table">
+          <thead>
+            <tr>
+              <th>Deporte</th>
+              <th>Descripción</th>
+              <th>¿Qué se requiere?</th>
+              <th>Ranking</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each deportes}}
+            <tr>
+              <td>{{deporte}}</td>
+              <td>{{descripcion}}</td>
+              <td>{{requerido}}</td>
+              <td><span class="ranking-badge ranking-{{ranking}}">{{ranking}}</span></td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </section>

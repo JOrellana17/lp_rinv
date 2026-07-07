@@ -51,6 +51,18 @@ main {
     box-shadow: 0 0.5rem 1.25rem rgba(10, 10, 15, 0.08);
 }
 
+.deportes-table-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.deportes-title {
+    margin: 0 0 1rem;
+    text-align: center;
+    width: 100%;
+}
+
 .deportes-table th,
 .deportes-table td {
     padding: 0.9rem;
@@ -60,8 +72,8 @@ main {
 
 .deportes-table th {
     text-align: left;
-    background: #0A0A0F;
-    color: #F0EDE6;
+    background: rgba(61, 91, 153, 0.14);
+    color: @primary-text-color;
 }
 
 .deportes-table tbody tr:nth-child(even) {
